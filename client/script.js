@@ -65,10 +65,11 @@ const handleSubmit = async (event) => {
     chatContainer.scrollTop = chatContainer.scrollHeight;
     const messageDiv = document.getElementById(uniqueID);
     loader(messageDiv);
-    const response = await fetch('http://localhost:1337', {
+    const response = await fetch('http://localhost:5000', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
+            'Authorization': 'Bearer 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'
         },
         body: JSON.stringify({
             prompt: data.get('prompt')
