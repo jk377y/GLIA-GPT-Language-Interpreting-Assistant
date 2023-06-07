@@ -6,6 +6,7 @@ const chatContainer = document.querySelector('#chat_container')
 
 let loadInterval = null;
 
+// text animation while loading
 const loader = (element) => {
     element.textContent = 'Feeding hamsters ';
     loadInterval = setInterval(() => {
@@ -16,21 +17,9 @@ const loader = (element) => {
     }, 200);
 }
 
-// const typeText = (element, text) => {
-//     let index = 0;
-//     const interval = setInterval(() => {
-//         if(index < text.length) {
-//             element.innerHTML += text.charAt(index);
-//         }
-//         else {
-//             clearInterval(interval);
-//         }
-//     }, 30);
-// }
-
+// animation for displaying text gradually on the screen
 const typeText = (element, text) => {
     let index = 0;
-
     const animate = () => {
         if (index < text.length) {
             element.innerHTML += text.charAt(index);
@@ -38,10 +27,10 @@ const typeText = (element, text) => {
             requestAnimationFrame(animate);
         }
     };
-
     requestAnimationFrame(animate);
 };
 
+// generate unique id for each message
 const generateUniqueID = () => {
     const timestamp = Date.now();
     const random = Math.floor(Math.random() * 1000000);
@@ -49,6 +38,7 @@ const generateUniqueID = () => {
     return `id-${timestamp}-${hexadecimal}`;
 };
 
+// chat stripe template so user and bot messages can be displayed on the screen and visually be distinguished
 const chatStripe = (isAI, value, uniqueID) => {
     return(
         `
@@ -64,6 +54,7 @@ const chatStripe = (isAI, value, uniqueID) => {
     )
 }
 
+// handle form submit 
 const handleSubmit = async (event) => {
     event.preventDefault();
     const data = new FormData(form);
@@ -89,7 +80,7 @@ const handleSubmit = async (event) => {
 
     if (response.ok) {
         const data = await response.json();
-        const parsedData = data.bot.trim() // trims any trailing spaces/'\n' 
+        const parsedData = data.bot.trim()
 
         typeText(messageDiv, parsedData)
     } else {
@@ -100,6 +91,7 @@ const handleSubmit = async (event) => {
     }
 }
 
+// event listeners for send button and enter key
 form.addEventListener('submit', handleSubmit);
 form.addEventListener('keyup', (event) => {
     if (event.key === 'Enter') {
