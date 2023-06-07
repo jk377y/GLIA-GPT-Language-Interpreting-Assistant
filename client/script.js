@@ -2,39 +2,40 @@ import bot from '/assets/bot.svg'
 import user from '/assets/user.svg'
 
 const form = document.querySelector('form')
-const chatContainer = document.querySelector('#chat-container')
+const chatContainer = document.querySelector('#chat_container')
 
 let loadInterval = null;
 
 const loader = (element) => {
-    element.textContent = 'Loading ';
+    element.textContent = 'Feeding hamsters ';
     loadInterval = setInterval(() => {
         element.textContent += '.';
-        if (element.textContent === 'Loading ....') {
-            element.textContent = 'Loading ';
+        if (element.textContent === 'Feeding hamsters .....') {
+            element.textContent = 'Feeding hamsters ';
         }
-    }, 300);
+    }, 200);
 }
 
 const typeText = (element, text) => {
     let index = 0;
-    const interval = setInterval(() => {
-        if(index < text.length) {
+
+    const animate = () => {
+        if (index < text.length) {
             element.innerHTML += text.charAt(index);
+            index++;
+            requestAnimationFrame(animate);
         }
-        else {
-            clearInterval(interval);
-        }
-    }, 30);
-        
-}
+    };
+
+    requestAnimationFrame(animate);
+};
 
 const generateUniqueID = () => {
     const timestamp = Date.now();
-    const random = Math.floor(Math.random());
-    const hexidecmal = random.toString(16);
-    return `id-${timestamp}-${hexidecmal}`;
-}
+    const random = Math.floor(Math.random() * 1000000);
+    const hexadecimal = random.toString(16).padStart(6, '0');
+    return `id-${timestamp}-${hexadecimal}`;
+};
 
 const chatStripe = (isAI, value, uniqueID) => {
     return(
@@ -65,7 +66,7 @@ const handleSubmit = async (event) => {
 
 form.addEventListener('submit', handleSubmit);
 form.addEventListener('keyup', (event) => {
-    if(event.keyCode === 13) {
+    if (event.key === 'Enter') {
         handleSubmit(event);
     }
 });
