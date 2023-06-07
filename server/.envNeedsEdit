@@ -1,0 +1,6 @@
+// rename this file to .env
+// replace the value of PORT with your desired port
+// replace the value of OPENAI_API_KEY with your OpenAI API key
+
+PORT='xxxx'
+OPENAI_API_KEY='type-your-openai-api-key'
