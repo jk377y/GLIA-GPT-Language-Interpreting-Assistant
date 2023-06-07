@@ -69,7 +69,6 @@ const handleSubmit = async (event) => {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
-            'Authorization': 'Bearer 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'
         },
         body: JSON.stringify({
             prompt: data.get('prompt')
