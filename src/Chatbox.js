@@ -33,7 +33,7 @@ function Chatbox() {
 			{/* this sets the text in the input box to the {input} */}
 			<div className="input-wrapper">
 				<img src={glia} alt="glia" className="gliachat" title="Feel free to ask me anything"/>
-				<input type="text" value={input} onChange={(e) => setInput(e.target.value)} onKeyDown={handleKeyPress}/>
+				<input type="text" value={input} onChange={(e) => setInput(e.target.value)} onKeyDown={handleKeyPress} placeholder="Type a question here ..."/>
 				<button onClick={handleMessageSend}>
 					<img src={airplane} className="submit-btn" title="Send" alt="airplane send button" />
 				</button>
