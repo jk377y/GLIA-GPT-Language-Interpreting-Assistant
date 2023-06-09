@@ -96,7 +96,6 @@ nav {
 	justify-content: center;
 	align-items: center;
 	gap: 20px;
-	/* flex-direction: column; */
 	width: 100%;
 	height: 80vh;
 }
@@ -107,7 +106,6 @@ nav {
 }
 .chat-bubble {
 	position: relative;
-	/* display: inline-block; */
 	background-color: var(--botColor);
 	padding: 10px 15px;
 	border-radius: 10px;
@@ -142,12 +140,10 @@ nav {
 	transition: opacity 1s ease-in-out;
 }
 .highlight {
-	font-weight: 800;
 	color: var(--userColor);
 }
 .chatboxLink {
 	color: var(--userColor);
-	/* text-decoration: none; */
 	font-weight: 600;
 }
 /* ================================== */
