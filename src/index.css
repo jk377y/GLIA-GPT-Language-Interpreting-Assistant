@@ -1,0 +1,100 @@
+*, ::after, ::before {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+:root {
+	font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+	line-height: 1.5;
+	font-weight: 400;
+	color-scheme: light dark;
+	--userColor: #00ffb3;
+	--botColor: #646cff;
+}
+
+body {
+	background-color: #252525;
+}
+
+.app {
+	display: flex;
+	flex-direction: column;
+	height: 70vh;
+	margin-top: 50px;
+	align-items: center;
+	justify-content: center;
+}
+
+.chat {
+	background-color: #535353;
+	border: 3px inset rgb(102, 102, 102);
+	border-radius: 10px;
+	display: flex;
+	flex-direction: column;
+	height: 100%;
+	width: 90%;
+	max-width: 1000px;
+	align-items: flex-start;
+	justify-content: flex-start;
+	overflow-y: scroll;
+	padding: 20px;
+}
+
+.user-chat, .bot-chat {
+	margin: 15px 0;
+	padding: 10px;
+	border-radius: 15px;
+	word-wrap: break-word;
+	max-width: 60%;
+}
+.user-chat {
+	background-color: var(--botColor);
+	color: var(--userColor);
+	align-self: flex-end;
+	
+}
+
+.bot-chat {
+	background-color: var(--userColor);
+	color: var(--botColor);
+	align-self: flex-start;
+	
+}
+
+.input-wrapper {
+	width: 90%;
+	max-width: 1000px;
+	position: fixed;
+	bottom: 30px;
+	display: flex;
+	justify-content: space-between;
+}
+
+input {
+	width: calc(100% - 55px);
+	border-radius: 20px;
+	padding: 10px;
+	font-size: 1.1rem;
+}
+button {
+	background-color: transparent;
+	border: none;
+}
+.submit-btn {
+	background-color: transparent;
+	border: none;
+	width: 50px;
+	height: 50px;
+	cursor: pointer;
+	padding: 5px;
+}
+.submit-btn:hover {
+	background-color: #252525;
+	border-radius: 50%;
+	border: 1px inset #00ffb3;
+}
+.submit-btn:active {
+	background-color: #535353;
+	border: 2px inset #00ffb3;
+}
