@@ -8,3 +8,4 @@ Live link: https://glia-gpt-language-interpreting-assistant.vercel.app/home
 <br>
 
 <img src="./src/assets/images/homepage.JPG" width="800">
+<img src="./src/assets/images/screenshot.JPG" width="800">
