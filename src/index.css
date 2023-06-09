@@ -174,14 +174,64 @@ nav {
 }
 .user-chat {
 	background-color: var(--botColor);
-	color: var(--userColor);
+	color: white;
 	align-self: flex-end;
 }
 .bot-chat {
 	background-color: var(--userColor);
-	color: var(--botColor);
+	color: black;
 	align-self: flex-start;
 }
+.dot-1, .dot-2, .dot-3 {
+	display: inline-block;
+	width: 4px;
+	height: 4px;
+	margin-right: 4px;
+	border-radius: 50%;
+	background-color: #000;
+	animation-duration: 1s;
+	animation-fill-mode: both;
+	animation-iteration-count: infinite;
+  }
+  
+  .dot-1 {
+	animation-name: dot1-animation;
+  }
+  
+  .dot-2 {
+	animation-name: dot2-animation;
+  }
+  
+  .dot-3 {
+	animation-name: dot3-animation;
+  }
+  
+  @keyframes dot1-animation {
+	0%, 20%, 80%, 100% {
+	  transform: scale(1);
+	}
+	50% {
+	  transform: scale(1.2);
+	}
+  }
+  
+  @keyframes dot2-animation {
+	0%, 50%, 100% {
+	  transform: scale(1);
+	}
+	25% {
+	  transform: scale(1.2);
+	}
+  }
+  
+  @keyframes dot3-animation {
+	0%, 75%, 100% {
+	  transform: scale(1);
+	}
+	37.5% {
+	  transform: scale(1.2);
+	}
+  }
 .input-wrapper {
 	width: 90%;
 	max-width: 1000px;
