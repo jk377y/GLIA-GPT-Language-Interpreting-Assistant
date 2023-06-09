@@ -22,7 +22,7 @@ const Home = () => {
         setMessage(messages[currentIndex]);
         setShowMessage(true);
       }, 1000);
-    }, 5000);
+    }, 4000);
 
     return () => clearInterval(timer);
   }, []);
