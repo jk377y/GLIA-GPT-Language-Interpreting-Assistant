@@ -8,7 +8,7 @@ const Header = () => {
 			<header className="header">
 
 				<div className="logo-wrapper">
-					<a href="https://platform.openai.com/docs/api-reference" target="_blank" rel="noreferrer"><img src={openAILogo} alt="openai logo" className="openaiLogo" /></a>
+					<a href="https://platform.openai.com/docs/api-reference" target="_blank" rel="noreferrer"><img src={openAILogo} alt="openai logo" className="openaiLogo" title="OpenAI API"/></a>
 					<h3>Powered by OpenAI API</h3>
 				</div>
 				<h1 className="headerTitle">GLIA</h1>
