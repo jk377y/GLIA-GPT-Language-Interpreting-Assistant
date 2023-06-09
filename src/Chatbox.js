@@ -1,5 +1,6 @@
 import { useState } from "react";
 import airplane from "./assets/images/airplane.png";
+import glia from "./assets/images/glia.jpg";
 import { sendMessageToOpenAI } from "./openai";
 
 function Chatbox() {
@@ -31,6 +32,7 @@ function Chatbox() {
 
 			{/* this sets the text in the input box to the {input} */}
 			<div className="input-wrapper">
+				<img src={glia} alt="glia" className="gliachat" title="Feel free to ask me anything"/>
 				<input type="text" value={input} onChange={(e) => setInput(e.target.value)} onKeyDown={handleKeyPress}/>
 				<button onClick={handleMessageSend}>
 					<img src={airplane} className="submit-btn" title="Send" alt="airplane send button" />

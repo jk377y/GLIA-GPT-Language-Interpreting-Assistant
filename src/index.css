@@ -1,4 +1,6 @@
-*, ::after, ::before {
+*,
+::after,
+::before {
 	box-sizing: border-box;
 	margin: 0;
 	padding: 0;
@@ -15,6 +17,7 @@
 
 body {
 	background-color: #252525;
+	position: relative;
 }
 
 .app {
@@ -24,9 +27,35 @@ body {
 	align-items: center;
 }
 
-
-
 /* Header */
+.header {
+	display: block;
+	text-align: center;
+	height: 15vh;
+	width: 100%;
+	margin-top: 100px;
+}
+.logo-wrapper {
+	position: absolute;
+	top: 20px;
+	left: 20px;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	gap: 20px;
+}
+.openaiLogo {
+	width: 100px;
+	height: 100px;
+	background-color: var(--botColor);
+	padding: 5px;
+	border-radius: 50%;
+	border: 5px inset var(--userColor);
+	filter: drop-shadow(0px 0px 5px var(--userColor));
+}
+.logo-wrapper:hover {
+	filter: drop-shadow(0px 0px 5px var(--userColor));
+}
 .headerTitle {
 	color: var(--botColor);
 }
@@ -34,12 +63,6 @@ body {
 	color: var(--userColor);
 	font-size: 1rem;
 	margin: 5px 0;
-}
-.header {
-	display: block;
-	text-align: center;
-	height: 15vh;
-	width: 100%;
 }
 nav {
 	margin: 20px 0;
@@ -58,6 +81,7 @@ nav {
 	background-color: var(--userColor);
 	color: black;
 	border: 3px solid var(--botColor);
+	filter: drop-shadow(0px 0px 5px var(--botColor));
 }
 .navBtns:active {
 	background-color: #00c58a;
@@ -65,13 +89,68 @@ nav {
 }
 /* ================================== */
 
-
-
 /* Home */
+.home {
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+	gap: 20px;
+	/* flex-direction: column; */
+	width: 100%;
+	height: 80vh;
+}
+.glia {
+	width: 200px;
+	height: 200px;
+	border-radius: 50%;
+}
+.chat-bubble {
+	position: relative;
+	/* display: inline-block; */
+	background-color: var(--botColor);
+	padding: 10px 15px;
+	border-radius: 10px;
+	height: fit-content;
+	width: 100px;
+	word-wrap: break-word;
+}
+.message {
+	color: white;
+	font-size: 1.5rem;
+	text-align: center;
+}
+.chat-bubble::after {
+	content: "";
+	position: absolute;
+	top: 50%;
+	left: -10px;
+	transform: translateY(-50%);
+	width: 0;
+	height: 0;
+	border-top: 10px solid transparent;
+	border-bottom: 10px solid transparent;
+	border-right: 10px solid var(--botColor);
+}
+.fade-in {
+	opacity: 1;
+	transition: opacity 1s ease-in-out;
+}
 
+.fade-out {
+	opacity: 0;
+	transition: opacity 1s ease-in-out;
+}
+.highlight {
+	font-weight: 800;
+	color: var(--userColor);
+}
+.chatboxLink {
+	color: var(--userColor);
+	/* text-decoration: none; */
+	font-weight: 600;
+}
 /* ================================== */
-
-
 
 /* Chatbox */
 .chat {
@@ -80,7 +159,7 @@ nav {
 	border-radius: 10px;
 	display: flex;
 	flex-direction: column;
-	height: 70vh;
+	height: 55vh;
 	width: 90%;
 	max-width: 1000px;
 	align-items: flex-start;
@@ -89,7 +168,8 @@ nav {
 	padding: 20px;
 	margin: 30px 0;
 }
-.user-chat, .bot-chat {
+.user-chat,
+.bot-chat {
 	margin: 15px 0;
 	padding: 10px;
 	border-radius: 15px;
@@ -100,13 +180,11 @@ nav {
 	background-color: var(--botColor);
 	color: var(--userColor);
 	align-self: flex-end;
-	
 }
 .bot-chat {
 	background-color: var(--userColor);
 	color: var(--botColor);
 	align-self: flex-start;
-	
 }
 .input-wrapper {
 	width: 90%;
@@ -114,13 +192,19 @@ nav {
 	position: fixed;
 	bottom: 30px;
 	display: flex;
-	justify-content: space-between;
+	gap: 10px;
 }
 input {
 	width: calc(100% - 55px);
 	border-radius: 20px;
 	padding: 10px;
 	font-size: 1.1rem;
+}
+.gliachat {
+	width: 50px;
+	height: 50px;
+	border-radius: 50%;
+	filter: drop-shadow(0px 0px 4px var(--userColor));
 }
 button {
 	background-color: transparent;
@@ -145,4 +229,18 @@ button {
 }
 /* ================================== */
 
-
+@media screen and (min-width: 1024px) {
+	.header {
+		margin-top: 0px;
+	}
+	.chat {
+		height: 65vh;
+	}
+	.chat-bubble {
+		width: 300px;
+	}
+	.glia {
+		width: 350px;
+		height: 350px;
+	}
+}
