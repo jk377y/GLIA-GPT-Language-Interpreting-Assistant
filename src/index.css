@@ -25,6 +25,7 @@ body {
 }
 
 
+
 /* Header */
 .headerTitle {
 	color: var(--botColor);
@@ -45,16 +46,31 @@ nav {
 }
 .navBtns {
 	background-color: var(--botColor);
+	border: 3px solid var(--userColor);
 	color: white;
 	margin: 0 20px;
 	padding: 8px;
 	border-radius: 10px;
+	font-weight: 600;
+	text-decoration: none;
+}
+.navBtns:hover {
+	background-color: var(--userColor);
+	color: black;
+	border: 3px solid var(--botColor);
+}
+.navBtns:active {
+	background-color: #00c58a;
+	border: 3px inset #575edb;
 }
 /* ================================== */
 
 
+
 /* Home */
+
 /* ================================== */
+
 
 
 /* Chatbox */
